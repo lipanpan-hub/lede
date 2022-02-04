@@ -13,10 +13,7 @@ on:
   push:
     branches: 
       - lpp_lede
-  # schedule:
-  #   - cron: 0 20 * * *
-  # release:
-  #   types: [published]
+
 
 jobs:
 
@@ -60,6 +57,8 @@ jobs:
 
       - name: Update feeds
         run: |
+          sed -i "/helloworld/d" "feeds.conf.default"
+          echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
