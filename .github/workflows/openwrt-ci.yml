@@ -72,7 +72,7 @@ jobs:
           # 例如:
 
           cat >> .config <<EOF
-          CONFIG_TARGET_IMAGES_GZIP=y
+          # CONFIG_TARGET_IMAGES_GZIP=y
           CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
           CONFIG_KERNEL_BUILD_DOMAIN="Azure"
           EOF
@@ -86,7 +86,7 @@ jobs:
 
           # 固件压缩:
           cat >> .config <<EOF
-          CONFIG_TARGET_IMAGES_GZIP=y
+          # CONFIG_TARGET_IMAGES_GZIP=y
           EOF
 
           # 编译UEFI固件:
@@ -96,8 +96,8 @@ jobs:
 
           # IPv6支持:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          CONFIG_PACKAGE_ipv6helper=y
+          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+          # CONFIG_PACKAGE_ipv6helper=y
           EOF
 
           # 常用LuCI插件选择:
@@ -128,8 +128,8 @@ jobs:
 
           # LuCI主题:
           cat >> .config <<EOF
-          # CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-netgear=y
+          CONFIG_PACKAGE_luci-theme-argon=y
+          # CONFIG_PACKAGE_luci-theme-netgear=y
           EOF
 
           #
